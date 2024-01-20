@@ -32,6 +32,12 @@ elif [ "$1" == "--multiple" ]; then
     shift
     lookup_multiple_countries "$@"
 else
-    echo "Usage: $0 <country_code>"
-    echo "       $0 --multiple <country_code1> <country_code2> ..."
+     # Prompt for country codes
+    printf "Enter country code(s) separated by space: "
+    read -r country_codes_input
+    country_codes=($country_codes_input)
+
+    lookup_multiple_countries "${country_codes[@]}"
+#    echo "Usage: $0 <country_code>"
+#    echo "       $0 --multiple <country_code1> <country_code2> ..."
 fi
