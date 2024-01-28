@@ -1,19 +1,12 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
   name: rest-service
 spec:
-  replicas: 1
   selector:
-    matchLabels:
-      app: rest-service
-  template:
-    metadata:
-      labels:
-        app: rest-service
-    spec:
-      containers:
-      - name: rest-service
-        image: amit8824/rest-service:latest  # Replace with your Docker image and tag
-        ports:
-        - containerPort: 8080
+    app: rest-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: NodePort
