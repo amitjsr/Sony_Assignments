@@ -12,11 +12,11 @@ Bonus
 1. http://192.168.49.2:30101/health
    {"status":"ok"}
    
-3. http://192.168.49.2:30101/diag
+3. http://3.87.244.172:31000/diag
    {"api_status": {"code": 200, "status": "ok"}
    
-5. http://192.168.49.2:30101/convert?country=United%20States
-   {"country_code":"UM"}
+5. http://3.87.244.172:31000/convert?country=Afganistan
+  {"country_code":"AF"}
 
 
 
